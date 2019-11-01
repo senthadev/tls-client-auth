@@ -29,4 +29,12 @@ public class TestClient {
                 .thenAccept(System.out::println)
                 .join();
     }
+
+    @Test
+    public void testGeneralOutput() {
+        Client client = new Client();
+        client.makeRequest(URI.create("https://www.google.no/"))
+                .thenAccept(System.out::println)
+                .join();
+    }
 }

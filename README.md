@@ -124,4 +124,13 @@ openssl s_client -cert certs/client1/client1.pem -key certs/client1/client1.key 
 
 Lets test it with Java
 
+```
+Test method:
+
+com.senthadev.upstreams.TestClient/testGetoutput
+
+This should print certificates along with
+Verify return code: 0 (ok)
+
+```
 
