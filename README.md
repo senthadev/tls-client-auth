@@ -134,3 +134,35 @@ Verify return code: 0 (ok)
 
 ```
 
+# OK!! Lets setup a resources behind the NginX and access it via Java client app.
+
+```
+Step 1:
+Start the nginX server.
+(Server runs in a virtual box )
+
+cd server
+./startNginx.sh
+
+Step 2:
+Test it with curl
+
+curl --cacert ../certs/appRootCA.pem \
+     --key ../certs/client1/client1.key \
+     --cert ../certs/client1/client1.pem \
+     --resolve api.senthadev.com:18443:192.168.99.100 "https://api.senthadev.com:18443"
+
+#output
+#All is Well
+
+Step 3:
+Test it with Java Client
+
+com.senthadev.upstreams.TestClient/testGetoutput
+
+#output
+#All is Well
+
+Thats it!!
+
+```

@@ -37,4 +37,12 @@ public class TestClient {
                 .thenAccept(System.out::println)
                 .join();
     }
+
+    @Test
+    public void testFailWithoutClientCert() {
+        Client client = new Client();
+        client.makeRequest(URI.create("https://api.senthadev.com:18443/"))
+                .thenAccept(System.out::println)
+                .join();
+    }
 }
